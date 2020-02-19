@@ -15,6 +15,7 @@ public class TestActivityActor {
         alarm.tell(new ActivityMsg(), ActorRef.noSender());
         alarm.tell(new DisableMsg("wrong password"), ActorRef.noSender());
         alarm.tell(new DisableMsg("right password"), ActorRef.noSender());
+        alarm.tell(new EnableMsg("right password"), ActorRef.noSender());
     }
 }
 

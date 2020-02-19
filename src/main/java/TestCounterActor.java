@@ -10,11 +10,11 @@ public class TestCounterActor {
         ActorSystem actorSystem = ActorSystem.create("sample1");
         final ActorRef counter = actorSystem.actorOf(CounterActor.props(), "counter");
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 500; i++) {
             new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    for (int j = 0; j < 5; j++) {
+                    for (int j = 0; j < 500; j++) {
                         counter.tell(new Message(), ActorRef.noSender());
                     }
                 }
